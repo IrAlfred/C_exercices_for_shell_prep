@@ -17,3 +17,12 @@ ssize_t _getline(char **lineptr, size_t *n)
 	}
 	return (index);
 }
+int main(void)
+{
+	size_t nbChars;
+	char **line = malloc(sizeof(char) * 50);
+	
+	printf("$ ");
+	_getline(line, &nbChars);
+	return (0);
+}
