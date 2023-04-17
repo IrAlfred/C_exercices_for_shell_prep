@@ -28,5 +28,6 @@ int main(void)
 	
 	printf("$ ");
 	_getline(line, 20);
+	printf("Result : %s\n", line);
 	return (0);
 }
