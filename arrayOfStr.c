@@ -10,7 +10,7 @@ int main(void)
 	int total = 0;
 	char buffer[BUFFER_SIZE];
 
-	length = 0;
+	int length = 0;
 
 	printf("Enter number of strings: ");
 	scanf("%d", &total);
