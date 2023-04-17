@@ -23,7 +23,7 @@ int _getline(char *s, int lim)
 }
 int main(void)
 {
-	int nbChars = 0;
+	/*int nbChars = 0;*/
 	char *line = malloc(sizeof(char) * 50);
 	
 	printf("$ ");
