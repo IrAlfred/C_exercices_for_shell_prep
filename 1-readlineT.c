@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * _getline - reads the line from user
@@ -15,14 +16,15 @@ ssize_t _getline(char **s, size_t lim)
 
 	while (i < lim && (c = getchar()) != EOF && c != '\n')
 	{
+		s[i] = malloc(20 * sizeof(char) + 1);
 		if (c == ' ')
 		{
 			s++;
-			*s[i] = '\0';
+			s[i] = '\0';
 		}
 		else
 		{
-			*s[i] = c;
+			s[i] = c;
 		}
 		i++;
 	}
@@ -32,10 +34,14 @@ ssize_t _getline(char **s, size_t lim)
 int main(void)
 {
 	/*int nbChars = 0;*/
-	char **line = malloc(10 * (sizeof(char) * 50));
+	char **line = malloc(sizeof(char *) * 10);
 	
 	printf("$ ");
 	_getline(line, 20);
-	printf("Result : %s\n", line);
+	while (line)
+	{
+		printf("Result : %s\n", *line);
+		line++;
+	}
 	return (0);
 }
