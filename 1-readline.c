@@ -27,6 +27,6 @@ int main(void)
 	char *line = malloc(sizeof(char) * 50);
 	
 	printf("$ ");
-	_getline(line, &nbChars);
+	_getline(line, 20);
 	return (0);
 }
