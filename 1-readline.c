@@ -8,20 +8,23 @@
  *
  * Return: number of chars
  */
-ssize_t _getline(char **lineptr, size_t *n)
+int _getline(char *s, int lim)
 {
-	ssize_t index = 0;
-	while (*lineptr[index] != '\n' && *lineptr[index] != EOF)
+	char c;
+	int i = 0;
+
+	while (i < lim && (c = getchar()) != EOF && c != '\n')
 	{
-		*lineptr[index] = getchar();
-		index++;
+		s[i] = c;
+		i++;
 	}
-	return (index);
+	s[i] = '\0';
+	return (i);
 }
 int main(void)
 {
-	size_t nbChars = 0;
-	char **line = malloc(sizeof(char) * 50);
+	int nbChars = 0;
+	char *line = malloc(sizeof(char) * 50);
 	
 	printf("$ ");
 	_getline(line, &nbChars);
