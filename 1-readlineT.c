@@ -50,7 +50,7 @@ int main(void)
 	_getline(line, 20);
 	while (line[i])
 	{
-		printf("Result : %s\n", *(line + i));
+		printf("Result : %s\n", line[i]);
 		i++;
 	}
 	return (0);
