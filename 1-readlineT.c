@@ -11,24 +11,34 @@
  */
 ssize_t _getline(char **s, size_t lim)
 {
-	char c;
+	char c = 'c';
 	size_t i = 0;
+	int j;
 
-	while (i < lim && (c = getchar()) != EOF && c != '\n')
+	while (i < lim && c != EOF && c != '\n')
 	{
-		s[i] = malloc(20 * sizeof(char) + 1);
-		if (c == ' ')
+		j = 0;
+		s[i] = malloc(20 * sizeof(char));
+		while ((c = getchar()) != ' ')
 		{
-			s++;
-			s[i] = '\0';
+
+			if (c == '\n')
+			{
+				break;
+			}
+			else if (c = EOF)
+			{
+				break;
+			}
+			else
+			{
+				s[i][j] = c;
+			}
+			j++;
 		}
-		else
-		{
-			s[i] = c;
-		}
+		s[i][j] = '\0';
 		i++;
 	}
-	*s[i] = '\0';
 	return (i);
 }
 int main(void)
