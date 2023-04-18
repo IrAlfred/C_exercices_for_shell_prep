@@ -45,13 +45,13 @@ int main(void)
 {
 	/*int nbChars = 0;*/
 	char **line = malloc(sizeof(char *) * 10);
-	
+	int i = 0;
 	printf("$ ");
 	_getline(line, 20);
-	while (line)
+	while (line[i])
 	{
-		printf("Result : %s\n", *line);
-		line++;
+		printf("Result : %s\n", *(line + i));
+		i++;
 	}
 	return (0);
 }
