@@ -43,11 +43,11 @@ char *_strtok(char *string, const char *delim)
 int main(void)
 {
 	char str[] = "Welcome to UAC university";
-	char *token = _strtok(str, ' ');
+	char *token = _strtok(str, " ");
 	while (token != NULL)
 	{
 		printf("%s\n", token);
-		token = _strtok(NULL, ' ');
+		token = _strtok(NULL, " ");
 	}
 	return (0);
 }
