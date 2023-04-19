@@ -8,10 +8,10 @@
  *
  * Return: pointer to the first occurence found
  */
-char *_strchr(char *s, char c)
+const char *_strchr(const char *s, char c)
 {
 	unsigned int i = 0;
-	char *f;
+	const char *f;
 
 	while (*(s + i) != '\0')
 	{
